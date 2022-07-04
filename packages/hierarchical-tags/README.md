@@ -49,9 +49,45 @@ SwaggerUI({
 })
 ```
 
-
 ## Hierarchical Tags Plugin Options
 
 There are no additional options for this plugin. If the plugin is included on initialization, then
 it is enabled and will split tags on any colon (`:`) or pipe (`|`) character.
+
+
+## Direct linking using unpkg and `<script>` tags
+
+You can also quickly and easily direct-link the file using unpkg.com. Below is a full working
+html document that you can use as a starting point:
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <!-- Load Swagger UI -->
+    <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script> 
+
+    <!-- Load the HierarchicalTags Plugin -->
+    <script src="https://unpkg.com/swagger-ui-plugin-hierarchical-tags"></script>
+
+    <!-- Load styles -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+
+    <script>
+      window.onload = function() {
+        SwaggerUIBundle({
+          url: "https://unpkg.com/swagger-ui-plugin-hierarchical-tags/example/pet-store.json",
+          dom_id: "#swagger",
+          plugins: [
+            HierarchicalTagsPlugin
+          ]
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="swagger"></div>
+  </body>
+</html> 
+```
 
