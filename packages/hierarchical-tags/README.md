@@ -94,7 +94,7 @@ it is enabled and will split tags on any colon (`:`) or pipe (`|`) character.
 
 To publish the github package, simply bump the version and run `npm publish`.
 
-To publish to unpkg, you need to change `package.json` and `.npmrc` to point everything to
-https://npmjs.org, remove the `@kael-shipman` prefix from the package name and then run
-`npm publish`. These changes should be reverted when finished and should not be committed.
+To publish to unpkg (via npmjs.org), just remove the `@kael-shipman` prefix from the package name
+and then run `npm publish` again. You should revert this change when you've successfully published
+the package.
 
