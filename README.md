@@ -9,17 +9,17 @@ A multi-package repository of useful Swagger UI plugins maintained by [@shockey]
 This is a fork of https://github.com/shockey/swagger-ui-plugins. That repo appears not to be maintained anymore. This
 branch (`combined`) is the combination of all of the PRs that I've submitted to shockey/swagger-ui-plugins. Those are:
 
-* https://github.com/shockey/swagger-ui-plugins/pull/4
-* https://github.com/shockey/swagger-ui-plugins/pull/5
-* https://github.com/shockey/swagger-ui-plugins/pull/6
+* [Created plugin boilerplate and new-plugin script](https://github.com/shockey/swagger-ui-plugins/pull/4)
+* [WIP: More plugins](https://github.com/shockey/swagger-ui-plugins/pull/5)
+* [WIP: Hierarchical tags](https://github.com/shockey/swagger-ui-plugins/pull/6)
 
 I have largely abandoned those PRs, since it appears they won't be attended to, but if @shockey becomes active again,
 I will gladly push them through.
 
 ### Import information about this fork
 
-This fork mainly exists to proved the [Hierarchical Tags](https://www.npmjs.com/package/swagger-ui-plugin-hierarchical-tags)
-plugin that many people are looking for (see [here](https://github.com/swagger-api/swagger-ui/issues/5969)).
+**This fork mainly exists to provide the [Hierarchical Tags](https://www.npmjs.com/package/swagger-ui-plugin-hierarchical-tags)
+plugin that many people are looking for (see [here](https://github.com/swagger-api/swagger-ui/issues/5969)).**
 
 **Instructions for installing and using that plugin are [here](./packages/hierarchical-tags/).**
 
