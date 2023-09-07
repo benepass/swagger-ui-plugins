@@ -2,9 +2,35 @@
 
 A multi-package repository of useful Swagger UI plugins maintained by [@shockey](https://github.com/shockey).
 
+-------------------------------------------------------------------------------------------------------------------
+
+## IMPORTANT: THIS IS A FORK
+
+This is a fork of https://github.com/shockey/swagger-ui-plugins. That repo appears not to be maintained anymore. This
+branch (`combined`) is the combination of all of the PRs that I've submitted to shockey/swagger-ui-plugins. Those are:
+
+* https://github.com/shockey/swagger-ui-plugins/pull/4
+* https://github.com/shockey/swagger-ui-plugins/pull/5
+* https://github.com/shockey/swagger-ui-plugins/pull/6
+
+I have largely abandoned those PRs, since it appears they won't be attended to, but if @shockey becomes active again,
+I will gladly push them through.
+
+### Import information about this fork
+
+This fork mainly exists to proved the [Hierarchical Tags](https://www.npmjs.com/package/swagger-ui-plugin-hierarchical-tags)
+plugin that many people are looking for (see [here](https://github.com/swagger-api/swagger-ui/issues/5969)).
+
+**Instructions for installing and using that plugin are [here](./packages/hierarchical-tags/).**
+
+-------------------------------------------------------------------------------------------------------------------
+
 ## 👉 Available Plugins
 
 - [`disable-try-it-out-without-servers`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/disable-try-it-out-without-servers): enter documentation-only mode when OAS 3.0 `servers` is empty or missing
+- [`hide-empty-tags`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/hide-empty-tags): hide empty tags
+- [`url-mutator`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/url-mutator): mechanism to override path, basePath and scheme for OpenAPI 2.x definitions
+- [`disable-oas-spec-link`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/disable-oas-spec-link): prevent the display of the OpenAPI specification URL link
 
 ## Contributing
 
