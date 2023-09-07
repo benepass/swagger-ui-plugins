@@ -81,7 +81,11 @@ Once you've done that, you should be able to install it as normal like so:
 npm install --save @kael-shipman/swagger-ui-plugin-hierarchical-tags
 ```
 
-Finally, require it in your client-side application and apply it to your swagger instance:
+</details>
+
+#### Usage
+
+To use a local install, require it in your client-side application and apply it to your swagger instance:
 
 ```js
 const HierarchicalTagsPlugin = require('@kael-shipman/swagger-ui-plugin-hierarchical-tags');
@@ -93,8 +97,6 @@ SwaggerUI({
   ]
 })
 ```
-
-</details>
 
 
 ## Hierarchical Tags Plugin Options
