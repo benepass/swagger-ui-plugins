@@ -45,6 +45,19 @@ Below is a full working html document that you can use as a starting point:
 
 ### Installing Locally Via NPM
 
+#### Installation via https://npmjs.com
+
+Install as you would any other package: `npm i --save swagger-ui-plugins-hierarchical-tags`
+
+#### Installation via Github Packages
+
+> **NOTE:** This was how I was serving the package before I decided that https://github.com/shockey/swagger-ui-plugins
+> was unresponsive. You can still get it this way, but it's probably easier to just use unpkg or npmjs now. See above
+> for those methods.
+
+<details>
+  <summary>Github Packages Instructions</summary>
+
 You can install this package from my personal github repo. To do so, you should create a
 package-local `.npmrc` file, if not already created, and add the following to it:
 
@@ -80,6 +93,8 @@ SwaggerUI({
   ]
 })
 ```
+
+</details>
 
 
 ## Hierarchical Tags Plugin Options
