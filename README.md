@@ -31,6 +31,7 @@ plugin that many people are looking for (see [here](https://github.com/swagger-a
 - [`hide-empty-tags`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/hide-empty-tags): hide empty tags
 - [`url-mutator`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/url-mutator): mechanism to override path, basePath and scheme for OpenAPI 2.x definitions
 - [`disable-oas-spec-link`](https://github.com/shockey/swagger-ui-plugins/tree/master/packages/disable-oas-spec-link): prevent the display of the OpenAPI specification URL link
+- [`hierarchical-tags`](https://github.com/kael-shipman/swagger-ui-plugins/tree/combined/packages/hierarchical-tags): use a delimiter character to split tags into a hierarchy and display them with better grouping
 
 ## Contributing
 
