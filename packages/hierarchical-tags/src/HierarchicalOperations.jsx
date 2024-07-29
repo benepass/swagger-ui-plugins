@@ -46,7 +46,7 @@ export class HierarchicalOperations extends React.Component {
     } = getConfigs()
 
     if (!hierarchicalTagSeparator) {
-      hierarchicalTagSeparator = /[:|]/
+      hierarchicalTagSeparator = /[:|>]/
     }
 
     let filter = layoutSelectors.currentFilter()
@@ -125,3 +125,4 @@ export class HierarchicalOperations extends React.Component {
   }
 }
 
+export default HierarchicalOperations;
