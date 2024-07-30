@@ -59,8 +59,9 @@ export class HierarchicalOperationTag extends React.Component {
       getConfigs,
       getComponent,
       specSelectors,
-      specUrl,
     } = this.props;
+
+    const specUrl = specSelectors.url();
 
     let {
       docExpansion,

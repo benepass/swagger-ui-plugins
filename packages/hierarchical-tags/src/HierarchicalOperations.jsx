@@ -92,7 +92,7 @@ export class HierarchicalOperations extends React.Component {
       const parts = tag.split(hierarchicalTagSeparator);
       let current = tagHierarchy;
       for (let i = 0; i < parts.length; i++) {
-        const part = parts[i];
+        const part = parts[i].trim();
         // if hierarchical structure not exists create it and add cursor for child tags
         if (current[part] === undefined) {
           current[part] = {
@@ -106,9 +106,9 @@ export class HierarchicalOperations extends React.Component {
           current[part].data = data;
         }
         current = current[part].childTags;
+        console.log({part, current})
       }
     });
-
     return Object.keys(tagHierarchy).size === 0
       ? <h3> No operations defined in spec!</h3>
       :
