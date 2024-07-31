@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "index.js",
-    library: "YourLibraryName", // Optional, provide a name for your library
+    library: "@benepass/swagger-ui-plugin-hierarchical-tags", // Optional, provide a name for your library
     libraryTarget: "umd", // Universal Module Definition, to support CommonJS, AMD and browser globals
     globalObject: "this", // Use 'this' instead of 'window' to support Node.js
   },
