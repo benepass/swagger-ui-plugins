@@ -1,9 +1,9 @@
 {
-  "name": "swagger-ui-plugin-hierarchical-tags",
+  "name": "@benepass/swagger-ui-plugin-hierarchical-tags",
   "version": "1.0.4",
   "description": "Display endpoints grouped into a hierarchy based on delimited tag names",
   "author": "Kael Shipman<kael.shipman@gmail.com>",
-  "homepage": "https://github.com/kael-shipman/swagger-ui-plugins/tree/hierarchical-tags",
+  "homepage": "https://github.com/benepass/swagger-ui-plugins/tree/hierarchical-tags",
   "license": "MIT",
   "main": "build/index.js",
   "keywords": [
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kael-shipman/swagger-ui-plugins.git"
+    "url": "git+https://github.com/benepass/swagger-ui-plugins.git"
   },
   "scripts": {
     "start": "npx http-server example/",
@@ -33,7 +33,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/kael-shipman/swagger-ui-plugins/issues"
+    "url": "https://github.com/benepass/swagger-ui-plugins/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -50,12 +50,12 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "@braintree/sanitize-url": "^5.0.0",
     "css.escape": "^1.5.1",
-    "immutable": "^3.x.x",
+    "immutable": "^4.3.7",
     "prop-types": "^15.7.2",
     "react": "=15.7.0",
     "react-immutable-proptypes": "^2.2.0"

@@ -46,7 +46,7 @@ export class HierarchicalOperations extends React.Component {
     } = getConfigs()
 
     if (!hierarchicalTagSeparator) {
-      hierarchicalTagSeparator = /[:|]/
+      hierarchicalTagSeparator = /[:|>]/
     }
 
     let filter = layoutSelectors.currentFilter()
@@ -60,7 +60,6 @@ export class HierarchicalOperations extends React.Component {
     if (maxDisplayedTags && !isNaN(maxDisplayedTags) && maxDisplayedTags >= 0) {
       taggedOps = taggedOps.slice(0, maxDisplayedTags)
     }
-
     /**
      * Each taggedOperation is a tag with information and then some operations. All we need
      * to do is restructure this so that it reflects a hierarchical list instead of a flat
@@ -92,7 +91,7 @@ export class HierarchicalOperations extends React.Component {
       const parts = tag.split(hierarchicalTagSeparator);
       let current = tagHierarchy;
       for (let i = 0; i < parts.length; i++) {
-        const part = parts[i];
+        const part = parts[i].trim();
         // if hierarchical structure not exists create it and add cursor for child tags
         if (current[part] === undefined) {
           current[part] = {
@@ -108,7 +107,6 @@ export class HierarchicalOperations extends React.Component {
         current = current[part].childTags;
       }
     });
-
     return Object.keys(tagHierarchy).size === 0
       ? <h3> No operations defined in spec!</h3>
       :
@@ -125,3 +123,4 @@ export class HierarchicalOperations extends React.Component {
   }
 }
 
+export default HierarchicalOperations;
