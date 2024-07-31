@@ -60,7 +60,6 @@ export class HierarchicalOperations extends React.Component {
     if (maxDisplayedTags && !isNaN(maxDisplayedTags) && maxDisplayedTags >= 0) {
       taggedOps = taggedOps.slice(0, maxDisplayedTags)
     }
-
     /**
      * Each taggedOperation is a tag with information and then some operations. All we need
      * to do is restructure this so that it reflects a hierarchical list instead of a flat
@@ -106,7 +105,6 @@ export class HierarchicalOperations extends React.Component {
           current[part].data = data;
         }
         current = current[part].childTags;
-        console.log({part, current})
       }
     });
     return Object.keys(tagHierarchy).size === 0

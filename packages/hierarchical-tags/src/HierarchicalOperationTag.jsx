@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import ImPropTypes from "react-immutable-proptypes"
-import Im from "immutable"
+import Im, { fromJS } from "immutable"
 import { buildUrl, isFunc, createDeepLinkPath, escapeDeepLinkPath, sanitizeUrl } from "./Utils"
 
 const SWAGGER2_OPERATION_METHODS = [
@@ -39,6 +39,21 @@ export class HierarchicalOperationTag extends React.Component {
     this.render = this.render.bind(this);
     this.renderChildTags = this.renderChildTags.bind(this);
   }
+
+  onLoad = (ref) => {
+    const { tag, tagObj, layoutSelectors, layoutActions } = this.props
+    const canonicalTagName = tagObj && tagObj.get("canonicalTagName") || tag;
+
+    const isShownKey = ["operations-tag", canonicalTagName]
+    const scrollToKey = layoutSelectors.getScrollToKey()
+
+    if (Im.is(scrollToKey, fromJS(isShownKey))) {
+      layoutActions.scrollToElement(ref)
+      layoutActions.clearScrollTo()
+    }
+    layoutActions.readyToScroll(isShownKey, ref)
+  }
+
 
   render() {
     // If this is the root element, just render the child tags
@@ -91,7 +106,7 @@ export class HierarchicalOperationTag extends React.Component {
     const showTag = layoutSelectors.isShown(isShownKey, docExpansion === "full" || docExpansion === "list")
 
     return (
-      <div className={showTag ? "opblock-tag-section is-open" : "opblock-tag-section"} >
+      <div className={showTag ? "opblock-tag-section is-open" : "opblock-tag-section"} ref={this.onLoad} >
         <h4
           onClick={() => layoutActions.show(isShownKey, !showTag)}
           className={!tagDescription ? "opblock-tag no-desc" : "opblock-tag" }
@@ -160,7 +175,7 @@ export class HierarchicalOperationTag extends React.Component {
                   op={op}
                   path={path}
                   method={method}
-                  tag={tag}
+                  tag={canonicalTagName}
                 />
               }).toArray()
             }
