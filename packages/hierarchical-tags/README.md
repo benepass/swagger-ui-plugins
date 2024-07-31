@@ -1,5 +1,4 @@
-Swagger UI 'Hierarchical Tags' Plugin
-==================================================================
+# Swagger UI 'Hierarchical Tags' Plugin
 
 This plugin produces a layout with endpoints grouped into a hierarhical list based on tags with (optional) special
 delimiter characters to denote hierarchy. Delimiter characters are `|` and `:` by default, but may be configured using
@@ -7,42 +6,43 @@ the `hierarchicalTagSeparator` config option.
 
 (ref discussions [here](https://github.com/swagger-api/swagger-ui/issues/5969) and [here](https://github.com/OAI/OpenAPI-Specification/issues/1367))
 
-
 ## Installation and Setup
 
 The easiest way to use this plugin for front-end projects is to link to it from your html via unpkg.
 Below is a full working html document that you can use as a starting point:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <!-- Load Swagger UI -->
-    <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script> 
+    <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
 
     <!-- Load the HierarchicalTags Plugin -->
     <script src="https://unpkg.com/swagger-ui-plugin-hierarchical-tags"></script>
 
     <!-- Load styles -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/swagger-ui-dist/swagger-ui.css"
+    />
 
     <script>
-      window.onload = function() {
+      window.onload = function () {
         SwaggerUIBundle({
           url: "https://unpkg.com/swagger-ui-plugin-hierarchical-tags/example/pet-store.json",
           dom_id: "#swagger",
-          plugins: [
-            HierarchicalTagsPlugin
-          ],
-          hierarchicalTagSeparator: /[:|]/
-        })
-      }
+          plugins: [HierarchicalTagsPlugin],
+          hierarchicalTagSeparator: /[:|]/,
+        });
+      };
     </script>
   </head>
   <body>
     <div id="swagger"></div>
   </body>
-</html> 
+</html>
 ```
 
 ### Installing Locally Via NPM
@@ -90,26 +90,21 @@ npm install --save @kael-shipman/swagger-ui-plugin-hierarchical-tags
 To use a local install, require it in your client-side application and apply it to your swagger instance:
 
 ```js
-const HierarchicalTagsPlugin = require('@kael-shipman/swagger-ui-plugin-hierarchical-tags');
+const HierarchicalTagsPlugin = require("@kael-shipman/swagger-ui-plugin-hierarchical-tags");
 
 SwaggerUI({
   // your options here...
-  plugins: [
-    HierarchicalTagsPlugin
-  ],
-  hierarchicalTagSeparator: /[:|]/
-})
+  plugins: [HierarchicalTagsPlugin],
+  hierarchicalTagSeparator: /[:|]/,
+});
 ```
-
 
 ## Hierarchical Tags Plugin Options
 
-* `hierarchicalTagSeparator` - (Optional, defaults to `/[|:]/`) The separator character(s) on which to split
+- `hierarchicalTagSeparator` - (Optional, defaults to `/[|:]/`) The separator character(s) on which to split
   hierarchical tags. Can be any string or regexp.
 
-
 ## Development
-
 
 ### Live-Testing Development
 
@@ -120,16 +115,13 @@ From here, you should be able to go to `http://localhost:8080` in your browser a
 hierarchical tags active. You can mess around with the `example/pet-store.json` and `example/index.html` files to try
 different inputs.
 
-When you change the source code, just run `npm run build` to rebuild the plugin file in the `example` folder and reload
+When you change the source code, just run `bun run build` to rebuild the plugin file in the `example` folder and reload
 the page.
-
 
 ### Publishing
 
-(This is more of a note-to-self.)
+create a classic personal access token on github with the `packages:write` scope.
+
+save that token as an env var called `BENEPASS_GITHUB_PACKAGE_TOKEN`
 
 To publish the github package, simply bump the version and run `npm publish`.
-
-To publish to unpkg (via npmjs.com), just remove the `@kael-shipman` prefix from the package name
-and then run `npm publish` again. You should revert this change when you've successfully published
-the package to npm.
